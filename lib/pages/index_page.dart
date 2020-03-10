@@ -1,3 +1,4 @@
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provide/provide.dart';
 import 'package:flutter/material.dart';
 import '../config/index.dart';
@@ -5,6 +6,7 @@ import 'home_page.dart';
 import 'category_page.dart';
 import 'cart_page.dart';
 import 'member_page.dart';
+import 'scaffold_page.dart';
 import '../provide/current_index_provide.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -18,12 +20,15 @@ class IndexPage extends StatelessWidget {
         icon: Icon(Icons.shopping_cart), title: Text(KString.shoppingCarTitle)),
     BottomNavigationBarItem(
         icon: Icon(Icons.person), title: Text(KString.memberTitle)),
+    BottomNavigationBarItem(
+        icon: Icon(Icons.apps), title: Text(KString.scaffoldTitle)),
   ];
   final List<Widget> tabBodies = [
     HomePage(),
     CategoryPage(),
     CartPage(),
     MemberPage(),
+    ScaffoldPage(),
   ];
 
   @override
@@ -35,6 +40,12 @@ class IndexPage extends StatelessWidget {
         int currentIndex =
             Provide.value<CurrentIndexProvide>(context).currentIndex;
         return Scaffold(
+//            appBar: AppBar(
+//              title: Text(
+//                "商城",
+//                style: TextStyle(color: Colors.white, fontSize: 20),
+//              ),
+//            ),
             backgroundColor: Color.fromRGBO(244, 245, 245, 1.0),
             bottomNavigationBar: BottomNavigationBar(
               type: BottomNavigationBarType.fixed,
