@@ -1,4 +1,3 @@
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provide/provide.dart';
 import 'package:flutter/material.dart';
 import '../config/index.dart';
@@ -47,12 +46,38 @@ class IndexPage extends StatelessWidget {
 //              ),
 //            ),
             backgroundColor: Color.fromRGBO(244, 245, 245, 1.0),
+            floatingActionButton: Container(
+              padding: EdgeInsets.all(3),
+              margin: EdgeInsets.only(top: 10),
+              height: 60,
+              width: 60,
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(30)),
+              child: FloatingActionButton(
+                elevation: 0,
+
+                backgroundColor: Colors.blue,
+                child: Icon(
+                  Icons.add,
+                  size: 40,
+                  color: Colors.white,
+                ),
+                onPressed: () {
+                  Provide.value<CurrentIndexProvide>(context).changeIndex(2);
+                },
+              ),
+            ),
+            floatingActionButtonLocation:
+                FloatingActionButtonLocation.centerDocked,
             bottomNavigationBar: BottomNavigationBar(
               type: BottomNavigationBarType.fixed,
               currentIndex: currentIndex,
               items: bottomTabs,
               onTap: (index) {
-                Provide.value<CurrentIndexProvide>(context).changeIndex(index);
+                if (index != 2) {
+                  Provide.value<CurrentIndexProvide>(context)
+                      .changeIndex(index);
+                }
               },
             ),
             body: IndexedStack(

@@ -22,7 +22,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: "/tabbarcontroller",
       onGenerateRoute: onGenerateRoute,
       title: KString.mainTitle,
       //商城

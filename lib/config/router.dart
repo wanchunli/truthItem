@@ -3,8 +3,10 @@ import 'package:truth/pages/appbar/appbar_page.dart';
 import 'package:truth/pages/setting/setting_page.dart';
 import '../pages/appbar/appbar_page.dart';
 import '../pages/appbar/appbar_controller_page.dart';
+import '../pages/login/login.dart';
 
 var routes = {
+  '/login':(context) => LoginPage(),
   '/appbar':(context) => AppbarPage(),
   '/tabbarcontroller':(context) => TabBarControllerPage(),
   '/setting': (context, {arguments}) => SettingPage(arguments: arguments),

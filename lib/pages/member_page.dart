@@ -15,7 +15,7 @@ class _MemberState extends State {
         alignment: WrapAlignment.spaceBetween,
         runAlignment: WrapAlignment.spaceBetween,
         children: <Widget>[
-          MyButton("Java"),
+          MyButton("Login"),
           MyButton("C++"),
           MyButton("Python"),
           MyButton("Android Android"),
@@ -51,7 +51,11 @@ class MyButton extends StatelessWidget {
             timeInSecForIos: 2,
             backgroundColor: Colors.grey,
             textColor: Colors.black);
-        Navigator.pushNamed(context, '/tabbarcontroller');
+        if (this.text == "Login") {
+          Navigator.pushNamed(context, '/login');
+        } else {
+          Navigator.pushNamed(context, '/tabbarcontroller');
+        }
       },
     );
   }
