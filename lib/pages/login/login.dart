@@ -27,6 +27,7 @@ class _LoginState extends State<LoginPage> {
               decoration: InputDecoration(
                 icon: Icon(Icons.person),
                 hintText: "请输入用户名",
+
                 labelText: "用户名",
               ),
               onChanged: (value) {
